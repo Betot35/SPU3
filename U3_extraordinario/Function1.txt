@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+char *strToLower(char *string)
+{
+    char *lower = (char *)malloc(sizeof(char) * strlen(string));
+    strcpy(lower, string);
+    for (int i = 0; i <= strlen(lower); i++) // strlen da el numero de caracteres que hay en la cadena
+    {
+        lower[i] = tolower(lower[i]); // tolower trasforma el caracter a minuscula
+    }
+    printf("Original palabra: %s\nPalabra en minuscula: %s\n", string, lower);
+
+    strcpy(string, lower);
+
+    return string;
+}
